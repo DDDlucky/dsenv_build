@@ -1,0 +1,61 @@
+https://datawokagaku.com/startjupyternote/
+
+https://datawokagaku.com/howtouse_jupyter/
+
+
+
+https://github.com/Tak113/dsenv_build/blob/master/Dockerfile
+
+
+docker run -p 8888:8888 6d5505c4c232
+
+
+
+また、現在のわたしの状況もお伝えさせていただきますと
+「Railsアプリの開発環境をDockerに移行する手順(Rails5 + MySQL8.0 + docker-compose)」
+https://qiita.com/YK0214/items/0aaaf5b99cbde44f15ea
+この記事で進めていますが
+$ docker-compose run web bundle exec rake db:migrate #マイグレーション
+の部分で下記のエラーが出ている状況です。
+
+Mysql2::Error::ConnectionError
+Unknown MySQL server host 'db' (-2)
+Extracted source (around line #90):
+88
+89
+90
+91
+92
+93
+              
+      conn_attrs = parse_connect_attrs(opts[:connect_attrs])
+
+      connect user, pass, host, port, database, socket, flags, conn_attrs
+    end
+
+    def parse_ssl_mode(mode)
+
+Rails.root: /workdir
+
+
+
+コードやファイルについては下記URLに記載されているものになります。
+https://qiita.com/hetare/questions/8d51ee85edf66eeaa0e6#answer-2ca52aec7798a049feec
+
+gemfileは一部変更されています。
+
+# gem 'mysql2', '~>0.5.3'　をコメントインして
+
+
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
+の箇所をコメントアウトしています。
+
+
+もしまとまった金額でのご対応が難しいようでしたら
+まずは上記の件の解消を考えております。
+今週土日でしたら今の所どの時間でも私は対応可能ですので
+その際にすり合わせさせていただくというのでも私は大丈夫です。
+
